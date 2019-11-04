@@ -7,12 +7,12 @@ export function indexReducer(state = initialState, action){
         case "SET_ACTIVE":
             return {
                 ...state,
-                active : action.value
+                active : true
             };
         case "SET_PASSIVE":
             return {
                 ...state,
-                active : action.value
+                active : false
             };
         default:
             return state;

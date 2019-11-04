@@ -1,17 +1,16 @@
 const SET_ACTIVE = "SET_ACTIVE";
 const SET_PASSIVE = "SET_PASSIVE";
 
-export function setActive(value){
-    console.log("Value : " + value)
+export function setActive(){
     return {
         type : SET_ACTIVE,
-        active : value
+        active : true
     }
 }
 
-export function setPassive(value){
+export function setPassive(){
     return {
         type : SET_PASSIVE,
-        active : value
+        active : false
     }
 }

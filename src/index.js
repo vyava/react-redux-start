@@ -6,12 +6,12 @@ import * as serviceWorker from './serviceWorker';
 
 
 import { indexReducer } from "./store/reducers/reducers";
-import { combineReducers, createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
+import { combineReducers, createStore } from "redux";
+// import thunk from "redux-thunk";
 
 const reducer = combineReducers({state: indexReducer});
 
-const store = createStore(reducer, applyMiddleware(thunk))
+const store = createStore(reducer)
 
 ReactDOM.render(<App store={store} />, document.getElementById('root'));
 
