@@ -1,16 +1,9 @@
-const SET_ACTIVE = "SET_ACTIVE";
-const SET_PASSIVE = "SET_PASSIVE";
+import { GET_NEWS, NEWS_RECEIVED } from "./constants";
 
-export function setActive(){
-    return {
-        type : SET_ACTIVE,
-        active : true
-    }
-}
+export const getNews = () => ({type: GET_NEWS});
 
-export function setPassive(){
-    return {
-        type : SET_PASSIVE,
-        active : false
-    }
-}
+// export function newsReceived(){
+//     return {
+//         type : NEWS_RECEIVED
+//     }
+// }

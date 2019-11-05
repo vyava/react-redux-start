@@ -5,23 +5,28 @@ import { connect } from "react-redux";
 
 
 function A(props){
-    console.log(props)
+    // let result = props.getNews()
+    // console.log(result)
     return (
         <div className="container">
-            <p>{JSON.stringify(props.active)}</p>
-            <button onClick={()=> props.dispatch(actions.setActive())}>Active</button>
-            <button onClick={()=> props.dispatch(actions.setPassive())}>Passive</button>
+            <button className="default" onClick={props.getNews}>Active</button>
+            {/* <button className={props.className} onClick={()=> props.dispatch(actions.setPassive())}>Passive</button> */}
         </div>
     )
 }
 
 
-const mapStateToProps = state => {
-    // console.log(state.state)
-    return {
-        active: state.state.active
-    }
-};
+// const mapStateToProps = (state) => {
+//     console.log(state)
+//     return {
+//         news : state
+//     }
+// };
 
+const mapDispatchToProps = {
+    getNews : actions.getNews
+}
 
-export default connect(mapStateToProps)(A);
+A = connect(null, mapDispatchToProps)(A);
+
+export default A;

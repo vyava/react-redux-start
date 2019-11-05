@@ -1,22 +1,23 @@
 import React from "react";
 // import { bindActionCreators } from "redux";
-import * as actions from "../store/actions/actions";
+// import * as actions from "../store/actions/actions";
 import { connect } from "react-redux";
 
 function B(props){
+    console.log(props)
     return (
         <div className="container">
-            <p>{JSON.stringify(props.active)}</p>
-            <button onClick={()=> props.dispatch(actions.setPassive())}>Passive</button>
+            {JSON.stringify(props)}
         </div>
     )
 }
 
-const mapStateToProps = state => {
-    // console.log(state.state)
+const mapStateToProps = (state) => {
     return {
-        active: state.state.active
+        article : state
     }
 };
 
-export default connect(mapStateToProps)(B);
+B = connect(mapStateToProps)(B);
+
+export default B;

@@ -22,3 +22,11 @@ button {
   background:#dedede;
   border:1px solid #ccc;
 }
+
+button.passive {
+  border-color: red;
+}
+
+button.active {
+  border-color: blue;
+}
