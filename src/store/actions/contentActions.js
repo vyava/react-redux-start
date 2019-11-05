@@ -1,4 +1,4 @@
-import { GET_NEWS, NEWS_RECEIVED } from "./constants";
+import { GET_NEWS } from "./constants";
 
 export const getNews = () => ({type: GET_NEWS});
 

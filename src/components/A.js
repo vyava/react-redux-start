@@ -1,32 +1,32 @@
 import React from "react";
 // import { bindActionCreators } from "redux";
-import * as actions from "../store/actions/actions";
+import * as actions from "../store/actions/contentActions";
 import { connect } from "react-redux";
 
 
-function A(props){
+let A = (props) => {
     // let result = props.getNews()
-    // console.log(result)
     return (
-        <div className="container">
-            <button className="default" onClick={props.getNews}>Active</button>
+        <div className="container top">
+            <div className={props.button.buttonStatus} id="result">Result</div>
+            <button onClick={props.getNews}>Get</button>
             {/* <button className={props.className} onClick={()=> props.dispatch(actions.setPassive())}>Passive</button> */}
         </div>
     )
 }
 
 
-// const mapStateToProps = (state) => {
-//     console.log(state)
-//     return {
-//         news : state
-//     }
-// };
+const mapStateToProps = (state) => {
+    // console.log(state)
+    return {
+        button : state.button
+    }
+};
 
 const mapDispatchToProps = {
     getNews : actions.getNews
 }
 
-A = connect(null, mapDispatchToProps)(A);
+A = connect(mapStateToProps, mapDispatchToProps)(A);
 
 export default A;

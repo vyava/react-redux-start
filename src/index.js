@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { applyMiddleware } from "redux";
+import { applyMiddleware, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import createSagaMiddleware from 'redux-saga';
 
@@ -13,12 +13,15 @@ const sagaMiddleware = createSagaMiddleware();
 
 import { createStore } from "redux";
 import rootSaga from "./store/sagas";
-import { indexReducer } from "./store/reducers"
+import { contentReducer as content, buttonReducer as button } from "./store/reducers/"
 
 
-// const reducer = combineReducers({indexReducer});
+const rootReducer = combineReducers({
+    content,
+    button
+});
 
-const store = createStore(indexReducer, applyMiddleware(sagaMiddleware))
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware))
 
 sagaMiddleware.run(rootSaga)
 

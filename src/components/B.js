@@ -3,18 +3,28 @@ import React from "react";
 // import * as actions from "../store/actions/actions";
 import { connect } from "react-redux";
 
-function B(props){
-    console.log(props)
+let B = ({contents}) => {
     return (
-        <div className="container">
-            {JSON.stringify(props)}
+        <div className="container content-wrapper">
+            {
+                (contents.length) ? 
+                contents.map((content) => {
+                    return (
+                        <div key={content.id} className="content-item">
+                            <h3>{content.title}</h3>
+                            <img src={content.thumbnailUrl} alt={content.title} />
+                        </div>
+                    )
+                }) : <h1>YOK</h1>
+            }
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
+    // console.log(state)
     return {
-        article : state
+        contents : state.content.news
     }
 };
 

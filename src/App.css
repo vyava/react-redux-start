@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   /* height:100vh; */
 }
 
@@ -11,10 +12,12 @@
 }
 
 .container {
-  padding:100px;
+  width: 100%;
+  padding:20px;
   margin:10px;
   border: 1px solid #ccc;
 }
+
 
 button {
   margin:0 5px;
@@ -29,4 +32,39 @@ button.passive {
 
 button.active {
   border-color: blue;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content-item {
+  font-size:12px;
+  border:1px solid #ededed;
+  margin:10px;
+  padding:15px;
+  box-shadow: 1px 2px 11px 1px #ccc;
+}
+
+.content-item h3 {
+  margin: 5px 30px;
+}
+
+#result {
+  font-weight: bold;
+  color : #000
+}
+
+#result.pending {
+  color : blue
+}
+#result.success {
+  color : green
+}
+
+#result.error {
+  color : red
 }

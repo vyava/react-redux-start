@@ -1,3 +1,9 @@
 export const GET_NEWS = "GET_NEWS";
 export const NEWS_RECEIVED = "NEWS_RECEIVED";
 export const PENDING_NEWS = "PENDING_NEWS";
+
+
+export const BUTTON_DEFAULT = 'BUTTON_DEFAULT';
+export const BUTTON_PENDING = 'BUTTON_PENDING';
+export const BUTTON_SUCCESS = 'BUTTON_SUCCESS';
+export const BUTTON_ERROR = 'BUTTON_ERROR';
